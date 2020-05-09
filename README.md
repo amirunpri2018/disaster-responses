@@ -46,8 +46,9 @@ To run the web app locally, follow the step:
 
 <a name="res"></a>
 # Result
-
-The web app of the code can be seen [here](https://medium.com/@dhaneswara.mandrasa/covid-19-this-is-why-some-countries-suffer-more-than-others-6ca7ee3e3c25).
+![fig1](https://github.com/dhaneswaramandrasa/disaster-responses/blob/master/fig1.png)
+![fig2](https://github.com/dhaneswaramandrasa/disaster-responses/blob/master/fig2.png)
+![fig3](https://github.com/dhaneswaramandrasa/disaster-responses/blob/master/fig3.png)
 
 <a name="lim"></a>
 # Limitation
@@ -56,4 +57,4 @@ The precision and recall result for each categories is vary, depend on the occur
 <a name="lic"></a>
 # Licensing, Authors, Acknowledgements
 
-The dataset is taken from FigureEight. You can find the Licensing for the data and other descriptive information at the link available [here](https://appen.com/). 
+Credit to Udacity for providing the project. The dataset is taken from FigureEight. You can find the Licensing for the data and other descriptive information at the link available [here](https://appen.com/). 
