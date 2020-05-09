@@ -73,12 +73,17 @@ def index():
     genre_names = df.groupby('genre').count()['message'].reset_index().genre.tolist()
     genre_counts = df.groupby('genre').count()['message'].reset_index().message.tolist()
     
-    # Second graph data  
+    # Second & third graph data  
     category_count = df.drop(['id', 'message','original','genre'], axis=1).sum(axis=0).reset_index()
     category_count.columns = ['category', 'count']
-    category_count = category_count.sort_values('count')
-    category_names = category_count.category.tolist()
-    category_total = category_count['count'].tolist()
+    
+    category_head = category_count.sort_values('count', ascending = False).head(10)
+    category_names_head = category_head.category.tolist()
+    category_total_head = category_head['count'].tolist()
+    
+    category_tail = category_count.sort_values('count', ascending = True).head(10)
+    category_names_tail = category_tail.category.tolist()
+    category_total_tail = category_tail['count'].tolist()
     
     # create visuals
       
@@ -99,19 +104,51 @@ def index():
     
     graph_two.append(
     gs.Bar(
-    x=category_total,
-    y=category_names,
-    orientation='h'
+    y=category_total_head,
+    x=category_names_head,
+    name='bar',
+    marker_color="lightskyblue"
         )
     )
     
-    layout_two = dict(title = 'Distribution of Categories',
-                xaxis = dict(title = 'Count',),
-                yaxis = dict(title = 'Category Names'))
+    graph_two.append(
+    gs.Line(
+    y=category_total_head,
+    x=category_names_head,
+    name='line'
+        )
+    )
+    
+    layout_two = dict(title = 'Top 10 Categories',
+                xaxis = dict(title = 'Count',))
+    
+    graph_three= []
+
+    graph_three.append(
+    gs.Bar(
+    y=category_total_tail,
+    x=category_names_tail,
+    name='bar',
+    marker_color="lightskyblue"
+        )
+    )
+    
+    graph_three.append(
+    gs.Line(
+     y=category_total_tail,
+    x=category_names_tail,
+    name='line'
+        )
+    )
+    
+    layout_three = dict(title = 'Bottom 10 Categories',
+                xaxis = dict(title = 'Count',))
+    
     
     graphs = []
     graphs.append(dict(data=graph_one, layout=layout_one))
     graphs.append(dict(data=graph_two, layout=layout_two))
+    graphs.append(dict(data=graph_three, layout=layout_three))
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
