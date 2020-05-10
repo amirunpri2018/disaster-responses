@@ -22,7 +22,7 @@ https://github.com/dhaneswaramandrasa/disaster-responses.git
 <a name="pro"></a>
 # Project Motivation
 
-The project is aiming to make a automated message classification that occured during a disaster that will be useful for organizations, agencies, or governments where their help is urgently needed.
+The project is aiming to make an automated message classification that occured during a disaster that will be useful for organizations, agencies, or governments where their help is urgently needed.
 
 <a name="fil"></a>
 # File Descriptions
@@ -54,7 +54,7 @@ To run the web app locally, follow the step:
 
 <a name="lim"></a>
 # Limitation
-The precision and recall result for each categories is vary, depend on the occurence of the categories in the training dataset. For example the most common categories such as 'related' which occurs 20,000 times will produces better precision and recall than categories like 'child_alone' that only occurs 188 times.
+The precision and recall result for each categories is vary, depend on the occurence of the categories in the training dataset. For example the most common categories such as 'related' which occurs 20,000 times produces better precision and recall than categories like 'child_alone' that only occurs 188 times.
 
 <a name="lic"></a>
 # Licensing, Authors, Acknowledgements
